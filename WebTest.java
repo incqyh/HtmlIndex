@@ -3,11 +3,12 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import Query.Query;
-import Query.QueryBuilder;
-import Query.WrongQueryException;
-import WebUtil.WebDoc;
-import WebUtil.WebIndex;
+import query.Query;
+import query.QueryBuilder;
+import query.WrongQueryException;
+import webutil.WebDoc;
+import webutil.WebIndex;
+import ui.View;
 
 class WebTest
 {
@@ -73,10 +74,14 @@ class WebTest
         return queries;
     }
 
-    public static void main(String[] args)
+    public static void main(String args[]) {
+        new View();
+    }
+
+    public static void main2(String[] args)
     {
-        String urlFilename = "Data/tests.txt";
-        String queryFilename = "Data/sampleQueryFileStage2.txt";
+        String urlFilename = "data/tests.txt";
+        String queryFilename = "data/sampleQueryFileStage2.txt";
         // if (args.length != 2)
         // {
         //     System.out.println("Please input the file name!");
@@ -108,5 +113,6 @@ class WebTest
                 System.out.println(wd.toString());
             }
         }
+        System.exit(0);
     }
 }
